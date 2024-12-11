@@ -8,9 +8,9 @@ public class Main {
 
         observable.subscribe(observer1);
         observable.subscribe(observer2);
-        observable.subscribe((newState) -> {
+        observable.subscribe((observer) -> {
             System.out.println("+++++++++ OBS Imp 3+++++++++++");
-            System.out.println("Res = "+newState*Math.cos(newState));
+            System.out.println("Res = "+Math.sin(((ObservableImpl)observer).getState()));
             System.out.println("+++++++++++++++++++++++++++++++");
         });
         observable.setState(60);
